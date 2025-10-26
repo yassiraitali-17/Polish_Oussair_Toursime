@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.png" type="image/png" />
+    <!-- Favicon Configuration -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=1" />
+    <link rel="shortcut icon" href="/favicon.ico?v=1" />
+    <meta name="theme-color" content="#e28e38" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control" content="max-age=3600" />
     
     <!-- Primary Meta Tags -->
     <title>Oussaid Tourism - Discover Marrakech | Tours, Activities & Transportation</title>
@@ -19,19 +24,25 @@
     <!-- Performance Optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="dns-prefetch" href="https://formsubmit.co">
+
+    <!-- Font Loading Strategy -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Preload critical images -->
     <link rel="preload" as="image" href="/src/assets/hero-marrakech.jpg" type="image/jpeg">
     <link rel="preload" as="image" href="/src/assets/logo-icon.png" type="image/png">
+
+    <!-- Additional Performance -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="image-rendering" content="auto">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://oussaidtourism.com" />
     <meta property="og:title" content="Oussaid Tourism - Discover Marrakech | Tours, Activities & Transportation" />
     <meta property="og:description" content="Experience the magic of Marrakech with authentic tours, exciting activities, and reliable transportation. Book your desert adventure today!" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="https://oussaidtourism.com/favicon.png" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Oussaid Tourism" />
 
@@ -40,7 +51,7 @@
     <meta name="twitter:url" content="https://oussaidtourism.com" />
     <meta name="twitter:title" content="Oussaid Tourism - Discover Marrakech" />
     <meta name="twitter:description" content="Experience the magic of Marrakech with authentic tours, exciting activities, and reliable transportation." />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:image" content="https://oussaidtourism.com/favicon.png" />
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -57,15 +68,24 @@
         "addressLocality": "Marrakech",
         "addressCountry": "Morocco"
       },
-      "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-13:00",
-      "areaServed": {
-        "@type": "City",
-        "name": "Marrakech"
-      },
-      "serviceType": ["Tours", "Activities", "Transportation"],
+      "openingHours": "Mo-Su 00:00-24:00",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Marrakech"
+        },
+        {
+          "@type": "City",
+          "name": "Agafay"
+        }
+      ],
+      "serviceType": ["Tours", "Activities", "Transportation", "Desert Tours", "Quad Biking", "Camel Rides"],
       "sameAs": [
-        "https://www.instagram.com/oussaid_tourisme/"
-      ]
+        "https://www.instagram.com/oussaid_tourisme/",
+        "https://www.facebook.com/share/14MosGFidma/?mibextid=wwXIfr",
+        "https://www.tiktok.com/@oussaid_tourisme?_t=ZS-90qfJyQSnif&_r=1"
+      ],
+      "priceRange": "MAD"
     }
     </script>
   </head>

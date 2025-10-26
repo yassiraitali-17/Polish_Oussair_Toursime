@@ -31,17 +31,18 @@ const Contact = () => {
     try {
       const formSubmitUrl = 'https://formsubmit.co/aitaliyassir55@gmail.com';
       
+      const submissionData = new FormData();
+      Object.entries({
+        ...formData,
+        _subject: 'New Contact Form Submission - Oussaid Tourism',
+        _template: 'table',
+      }).forEach(([key, value]) => {
+        submissionData.append(key, String(value));
+      });
+
       const response = await fetch(formSubmitUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          _subject: 'New Contact Form Submission - Oussaid Tourism',
-          _template: 'table',
-        }),
+        body: submissionData,
       });
 
       if (response.ok) {

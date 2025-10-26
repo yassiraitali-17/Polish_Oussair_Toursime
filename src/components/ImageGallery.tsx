@@ -82,6 +82,9 @@ const ImageGallery = ({ images, title, disableAutoplay = false }: ImageGalleryPr
                     className="w-full h-full object-cover bg-black"
                     controls
                     controlsList="nodownload"
+                    preload="metadata"
+                    playsinline
+                    playsInline
                   />
                 ) : (
                   <img
@@ -136,6 +139,7 @@ const ImageGallery = ({ images, title, disableAutoplay = false }: ImageGalleryPr
                     <video
                       src={media}
                       className="w-full h-full object-cover bg-black"
+                      preload="none"
                     />
                     <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                       <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
@@ -183,6 +187,9 @@ const ImageGallery = ({ images, title, disableAutoplay = false }: ImageGalleryPr
                       controls
                       controlsList="nodownload"
                       autoPlay
+                      preload="metadata"
+                      playsinline
+                      playsInline
                     />
                   ) : (
                     <img

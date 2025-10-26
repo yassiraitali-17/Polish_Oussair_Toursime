@@ -1,73 +1,121 @@
-# Welcome to your Lovable project
+# Oussaid Tourism
 
-## Project info
+Welcome to the Oussaid Tourism website - your gateway to discovering the magic of Marrakech with authentic tours, exciting activities, and reliable transportation services.
 
-**URL**: https://lovable.dev/projects/0faacbdb-3a5c-4c38-a8f4-87d165c9c691
+## Project Info
 
-## How can I edit this code?
+This is a modern web application built to showcase tourism services in Marrakech, Morocco. The website features a responsive design, multi-language support (English and French), and comprehensive booking functionality.
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/0faacbdb-3a5c-4c38-a8f4-87d165c9c691) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Next generation frontend tooling
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - High-quality UI components
+- **React Router** - Client-side routing
+- **React Hook Form** - Efficient form handling
+- **Zod** - Schema validation
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/0faacbdb-3a5c-4c38-a8f4-87d165c9c691) and click on Share -> Publish.
+### Prerequisites
 
-## Can I connect a custom domain to my Lovable project?
+- Node.js 18+ and npm installed
+- [Install Node with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Yes, you can!
+### Setup Instructions
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```sh
+# Step 1: Clone the repository
+git clone <YOUR_GIT_URL>
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# Step 2: Navigate to the project directory
+cd oussaid-tourism
+
+# Step 3: Install dependencies
+npm install
+
+# Step 4: Start the development server
+npm run dev
+```
+
+The application will be available at `http://localhost:8080` (or the configured port).
+
+## Available Scripts
+
+- `npm run dev` - Start the development server with hot reloading
+- `npm run build` - Build for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check code quality
+
+## Features
+
+- **Multi-language Support** - English and French language switcher
+- **Responsive Design** - Mobile-first approach with mobile, tablet, and desktop layouts
+- **Service Booking** - Easy-to-use booking system for tours and activities
+- **Activity Categories** - Agafay Desert, Palmeraie, and other activities
+- **Contact Integration** - Direct messaging via WhatsApp, phone, and email
+- **SEO Optimized** - Meta tags, structured data, and performance optimizations
+- **Fast Loading** - Optimized assets and lazy loading
+
+## Project Structure
+
+```
+src/
+├── components/       # Reusable React components
+│   ├── ui/          # Base UI components (buttons, cards, etc.)
+│   ├── Navbar.tsx   # Main navigation
+│   ├── Footer.tsx   # Footer with social links
+│   ├── LanguageSwitcher.tsx # Language selection component
+│   └── ...
+├── contexts/        # React Context for state management
+│   └── LanguageContext.tsx
+├── pages/           # Page components
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions
+├── data/            # Static data and configuration
+├── assets/          # Images and media files
+├── styles/          # Global styles
+└── App.tsx          # Root component
+```
+
+## Language Support
+
+The website supports English and French. Users can switch languages using the language selector in the navbar. The preference is saved locally in the browser.
+
+## Social Media Links
+
+- **Facebook**: [Oussaid Tourisme](https://www.facebook.com/share/14MosGFidma/?mibextid=wwXIfr)
+- **Instagram**: [@oussaid_tourisme](https://www.instagram.com/oussaid_tourisme/)
+- **TikTok**: [@oussaid_tourisme](https://www.tiktok.com/@oussaid_tourisme?_t=ZS-90qfJyQSnif&_r=1)
+
+## Contact Information
+
+- **Phone**: +212 707-704981
+- **Email**: obenhadya@gmail.com
+- **Location**: Marrakech, Morocco
+- **Hours**: 24/7 Available
+
+## Deployment
+
+To deploy this project to production:
+
+1. Build the project: `npm run build`
+2. The `dist` folder contains the production-ready files
+3. Deploy to your hosting service (Netlify, Vercel, etc.)
+
+## Performance & SEO
+
+The website is optimized for:
+- Fast loading times with code splitting
+- Mobile responsiveness
+- SEO best practices (meta tags, structured data)
+- Accessibility standards
+- Core Web Vitals
+
+## License
+
+All rights reserved © Oussaid Tourism

@@ -563,7 +563,7 @@ export const services: Service[] = [
     title: 'Ourika Valley – 1 Day',
     shortDescription: 'Discover the stunning Ourika Valley with its waterfalls and traditional Berber villages',
     description: 'Experience the beauty of the Ourika Valley, nestled in the foothills of the Atlas Mountains. Visit traditional Berber villages, explore local markets, and enjoy breathtaking waterfall views.',
-    price: '€35 / 350Dhs',
+    price: '€20 / 200Dhs',
     duration: 'Full day | Departure at 8:30 or 9:00',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fbd3d65f6ab2d4d5cb8b3184523df279d?format=webp&width=800',
     location: 'Ourika Valley',
@@ -572,6 +572,10 @@ export const services: Service[] = [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fafbb854a89b3485c971a7de2b8463cf5?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Ff9e05f76ac654b38b5d24759f0fa5e46?format=webp&width=800',
     ],
+    priceVariants: [
+      { label: 'Adult', price: '€20 / 200Dhs', priceNumeric: 20 },
+      { label: 'Child (-7 years)', price: '€10 / 100Dhs', priceNumeric: 10 }
+    ],
   },
   {
     id: 'ouzoud-waterfalls-tour',
@@ -579,7 +583,7 @@ export const services: Service[] = [
     title: 'Ouzoud Waterfalls – 1 Day',
     shortDescription: 'Visit Morocco\'s most spectacular waterfalls and see wild monkeys in their natural habitat',
     description: 'Journey to the magnificent Ouzoud Waterfalls, one of North Africa\'s most stunning natural wonders. Enjoy a scenic hike, spot Barbary monkeys, and take a refreshing boat ride at the base of the falls.',
-    price: '€40 / 400Dhs',
+    price: '€30 / 300Dhs',
     duration: 'Full day | Departure at 8:30',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F253dc0b0e0874aad9b1f7e4818963077?format=webp&width=800',
     location: 'Ouzoud',
@@ -588,6 +592,10 @@ export const services: Service[] = [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F1452e1e03efe40cba2060b6920a3fffd?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F4b7d76de6d784244b8cc7ad1160e1a1f?format=webp&width=800',
     ],
+    priceVariants: [
+      { label: 'Adult', price: '€30 / 300Dhs', priceNumeric: 30 },
+      { label: 'Child (-7 years)', price: '€20 / 200Dhs', priceNumeric: 20 }
+    ],
   },
   {
     id: 'essaouira-tour',
@@ -595,7 +603,7 @@ export const services: Service[] = [
     title: 'Essaouira – 1 Day',
     shortDescription: 'Explore the charming coastal city of Essaouira with its historic medina and beautiful beaches',
     description: 'Discover the picturesque port city of Essaouira, a UNESCO World Heritage site. Wander through the historic medina, visit the bustling harbor, and enjoy fresh seafood by the Atlantic Ocean.',
-    price: '€45 / 450Dhs',
+    price: '€25 / 250Dhs',
     duration: 'Full day | Departure at 8:30',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F2e1d2aab1883484ca89bef7324cd8724?format=webp&width=800',
     location: 'Essaouira',
@@ -604,6 +612,10 @@ export const services: Service[] = [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F59b8dc80a3f74683883ae0fbadf490ce?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F11799ed8575f4d92bc28d21287bce0c9?format=webp&width=800',
     ],
+    priceVariants: [
+      { label: 'Adult', price: '€25 / 250Dhs', priceNumeric: 25 },
+      { label: 'Child (-7 years)', price: '€15 / 150Dhs', priceNumeric: 15 }
+    ],
   },
   {
     id: 'ouarzazate-tour',
@@ -611,7 +623,7 @@ export const services: Service[] = [
     title: 'Ouarzazate – 1 Day',
     shortDescription: 'Visit the famous movie studios and the UNESCO-listed fortress of Ait Ben Haddou',
     description: 'Explore the gateway to the Sahara Desert. Visit the ancient kasbah of Ait Ben Haddou, a UNESCO World Heritage site and famous filming location, along with the Atlas Film Studios in Ouarzazate.',
-    price: '€50 / 500Dhs',
+    price: '€30 / 300Dhs',
     duration: 'Full day | Departure at 7:30',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fc4ee61a2987b43c78b70dd120940e4d9?format=webp&width=800',
     location: 'Ouarzazate',
@@ -619,6 +631,10 @@ export const services: Service[] = [
     gallery: [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fc8a9a9f47ebf49f6ab3b42866a2865d5?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F7506b72e5628401d800527cb86812236?format=webp&width=800',
+    ],
+    priceVariants: [
+      { label: 'Adult', price: '€30 / 300Dhs', priceNumeric: 30 },
+      { label: 'Child (-7 years)', price: '€20 / 200Dhs', priceNumeric: 20 }
     ],
   },
   {

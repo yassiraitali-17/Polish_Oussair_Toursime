@@ -11,7 +11,7 @@ interface SEOProps {
 const SEO = ({
   title = 'Oussaid Tourism - Discover Marrakech | Tours, Activities & Transportation',
   description = 'Experience the magic of Marrakech with Oussaid Tourism. Authentic tours, exciting activities, and reliable transportation services in Morocco. Book your Agafay Desert adventure or Palmeraie quad biking today!',
-  image = 'https://lovable.dev/opengraph-image-p98pqg.png',
+  image = '/favicon.png',
   article = false
 }: SEOProps) => {
   const location = useLocation();
