@@ -235,6 +235,18 @@ All colors MUST be HSL.
   }
 }
 
+/* Subtle pulse animation for call-to-action buttons */
+@keyframes pulse-attention {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 0 hsl(28 76% 56% / 0.4);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 0 8px hsl(28 76% 56% / 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   @keyframes line-build,
   @keyframes icon-settle,
