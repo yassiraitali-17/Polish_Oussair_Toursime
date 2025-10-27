@@ -555,6 +555,49 @@ export const services: Service[] = [
     inclusions: ['Professional chef instructor', 'All ingredients and equipment', 'Recipe booklet', 'Eat your prepared meal', 'Round-trip transport', 'Apron and cooking tools', 'Photos stop'],
     gallery: [images.cooking_class_1, images.cooking_class_2],
   },
+  {
+    id: 'chez-ali',
+    category: 'activity',
+    subcategory: 'other',
+    title: 'Chez Ali',
+    shortDescription: 'Spectacular evening show with traditional Moroccan performances',
+    description: 'Experience an unforgettable evening at Chez Ali with a world-class show featuring traditional Moroccan performances. The spectacular evening includes:\n\nCérémonie de bienvenue:\n• Saut de cheval arabe (Arabian horse jump)\n• Arrivée escortée par des cavaliers (Arrival escorted by cavalry)\n• Lancement de pétales de roses par les filles (Rose petal throw by dancers)\n• Spectacle de l\'homme bleu avec des torches (Blue man torch show)\n• Exposition sur cheval et fantaisie (Horse and fantasy exhibition)\n• Visite de la grotte d\'ali baba (Ali Baba cave visit)\n• Service d\'escorte à votre table (Table escort service)\n• Entrée majestueuse au restaurant (Majestic restaurant entrance)\n\nDuring dinner, enjoy performances from multiple regions:\n• Tiskiwine (Amz Miz)\n• Zayane (Khnifra)\n• Gnawa\n• Kelaa M\'Gouna\n• Ahwache Ouarzazate\n• Imin Tanout\n• Dekka (Marrakech)\n• Ahwache Ourika\n• Ait Ben Haddou (Azilal)\n• Guedra\n\nAfter dinner spectacular performances:\n• Danseuse du ventre (Belly dancer)\n• Spectacle Spectaculaire (Spectacular show)\n• Fantasia Spectaculaire (Spectacular fantasy)\n• Cascadeurs et spectacle de voltige d\'âne (Acrobats and donkey stunts)\n• Enchantement du tapis magique (Magic carpet enchantment)\n• Défilé de toute la troupe folklorique (Folk troupe parade)\n• Spectacle son et lumière (Sound and light show)\n• Coup final des cavaliers (Final cavalry performance)',
+    price: '€35 / 350Dhs',
+    duration: 'Evening | Departure at 6:00 PM',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2Faa7d57cf66844e86870f59a73e628652?format=webp&width=800',
+    location: 'Marrakech - Chez Ali',
+    inclusions: ['Welcome ceremony', 'Arabian horse performances', 'Regional musical performances', 'Dinner (choice of menu)', 'Dance and acrobat performances', 'Sound and light show', 'Round-trip transport'],
+    gallery: [
+      'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2Faa7d57cf66844e86870f59a73e628652?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2F4a7e933f980e4a1e885ecda90853113d?format=webp&width=800',
+    ],
+    variants: [
+      {
+        id: 'chez-ali-spectacle',
+        label: 'Spectacle',
+        price: '€35 / 350Dhs',
+        description: 'Spectacular show only without dinner',
+        duration: '3 hours | Departure at 6:00 PM',
+        inclusions: ['Welcome ceremony', 'Arabian horse performances', 'Regional musical performances', 'Dance and acrobat performances', 'Sound and light show', 'Round-trip transport'],
+      },
+      {
+        id: 'chez-ali-dinner-tajine',
+        label: 'Spectacle avec dinner tajine',
+        price: '€50 / 500Dhs',
+        description: 'Show with traditional Moroccan tajine dinner',
+        duration: '4 hours | Departure at 6:00 PM',
+        inclusions: ['Welcome ceremony', 'Traditional tajine dinner', 'Arabian horse performances', 'Regional musical performances', 'Dance and acrobat performances', 'Sound and light show', 'Round-trip transport'],
+      },
+      {
+        id: 'chez-ali-dinner-mechoui',
+        label: 'Spectacle avec dinner Mechoui',
+        price: '€70 / 700Dhs',
+        description: 'Show with premium Mechoui (roasted lamb) dinner',
+        duration: '4 hours | Departure at 6:00 PM',
+        inclusions: ['Welcome ceremony', 'Premium Mechoui dinner', 'Arabian horse performances', 'Regional musical performances', 'Dance and acrobat performances', 'Sound and light show', 'Round-trip transport'],
+      },
+    ],
+  },
 
   // Tours
   {
