@@ -176,7 +176,8 @@ const ServiceDetail = () => {
                 <div className="relative mb-4">
                   <button
                     onClick={() => setShowVariantsDropdown(!showVariantsDropdown)}
-                    className="w-full px-4 py-2 bg-muted hover:bg-muted/80 rounded-lg transition-colors flex items-center justify-between"
+                    className="w-full px-4 py-2 bg-muted hover:bg-muted/80 rounded-lg transition-colors flex items-center justify-between animate-pulse-attention"
+                    style={{ animation: 'pulse-attention 2s infinite' }}
                   >
                     <span className="text-sm font-medium">Discover Other Variations</span>
                     <ChevronDown
