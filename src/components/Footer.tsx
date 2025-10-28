@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram } from 'lucide-react';
 import logo from '@/assets/logo.png';
+import { useTranslate } from '@/hooks/useTranslate';
 
 const TikTokIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
