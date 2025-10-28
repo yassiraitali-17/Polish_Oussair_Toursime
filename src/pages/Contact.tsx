@@ -79,9 +79,9 @@ const Contact = () => {
     <div className="min-h-screen pt-24 pb-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">Get in Touch</h1>
+          <h1 className="text-5xl font-bold mb-4">{t('contact.title')}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have questions or ready to book your adventure? We'd love to hear from you!
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -95,7 +95,7 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Visit Us</h3>
+                    <h3 className="font-semibold mb-2">{t('contact.visitUs')}</h3>
                     <p className="text-muted-foreground">
                       Marrakech Medina<br />
                       Marrakech, Morocco
@@ -112,7 +112,7 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Call Us</h3>
+                    <h3 className="font-semibold mb-2">{t('common.phone')}</h3>
                     <a href="tel:+212707704981" className="text-muted-foreground hover:text-primary transition-colors">
                       +212 707-704981
                     </a>
@@ -128,7 +128,7 @@ const Contact = () => {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Email Us</h3>
+                    <h3 className="font-semibold mb-2">{t('contact.emailUs')}</h3>
                     <a href="mailto:obenhadya@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                       obenhadya@gmail.com
                     </a>
@@ -144,9 +144,9 @@ const Contact = () => {
                     <Clock className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Working Hours</h3>
+                    <h3 className="font-semibold mb-2">{t('contact.hours')}</h3>
                     <p className="text-muted-foreground">
-                      24/7 Available<br />
+                      {t('contact.available24_7')}<br />
                       Round-the-clock service
                     </p>
                   </div>
@@ -159,12 +159,12 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <Card>
               <CardHeader>
-                <CardTitle>Send Us a Message</CardTitle>
+                <CardTitle>{t('contact.form')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Your Name *</Label>
+                    <Label htmlFor="name">{t('common.name')} *</Label>
                     <Input
                       id="name"
                       name="name"
@@ -176,7 +176,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email">{t('common.email')} *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -189,7 +189,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone">{t('common.phone')}</Label>
                     <Input
                       id="phone"
                       name="phone"
@@ -201,7 +201,7 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Your Message *</Label>
+                    <Label htmlFor="message">{t('common.message')} *</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -214,7 +214,7 @@ const Contact = () => {
                   </div>
 
                   <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? t('common.loading') : t('contact.sendMessage')}
                   </Button>
                 </form>
               </CardContent>
