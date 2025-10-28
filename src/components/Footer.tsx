@@ -25,21 +25,21 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-          <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+          <h3 className="font-semibold text-lg mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
-              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link></li>
-              <li><Link to="/activities" className="text-muted-foreground hover:text-primary transition-colors">Activities</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">{t('services.title')}</Link></li>
+              <li><Link to="/activities" className="text-muted-foreground hover:text-primary transition-colors">{t('services.activities')}</Link></li>
               <li><Link to="/activities/agafay" className="text-muted-foreground hover:text-primary transition-colors">Agafay</Link></li>
               <li><Link to="/activities/palmeraie" className="text-muted-foreground hover:text-primary transition-colors">Palmeraie</Link></li>
-              <li><Link to="/activities/other" className="text-muted-foreground hover:text-primary transition-colors">Other Activities</Link></li>
-              <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link to="/activities/other" className="text-muted-foreground hover:text-primary transition-colors">{t('services.activities')}</Link></li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">{t('navbar.about')}</Link></li>
+              <li><Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">{t('navbar.contact')}</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.contactInfo')}</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -58,12 +58,12 @@ const Footer = () => {
 
           {/* Working Hours */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Working Hours</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.workingHours')}</h3>
             <ul className="space-y-2">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div className="text-sm">
-                  <p>24/7 Available</p>
+                  <p>{t('contact.available24_7')}</p>
                   <p>Round-the-clock service</p>
                 </div>
               </li>
@@ -72,7 +72,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Follow Us</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.followUs')}</h3>
             <div className="flex gap-4">
               <a href="https://www.facebook.com/share/14MosGFidma/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all hover:scale-110" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
@@ -88,7 +88,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Oussaid Tourism. All rights reserved. | Powered by <a href="https://siteqom.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">SiteQom</a></p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })} | {t('footer.poweredBy', { company: 'SiteQom' })}</p>
         </div>
       </div>
     </footer>
