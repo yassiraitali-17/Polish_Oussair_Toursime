@@ -5,6 +5,7 @@ import ServiceCard from '@/components/ServiceCard';
 import { getFeaturedServices, getServicesByCategory } from '@/data/services';
 import heroImage from '@/assets/hero-marrakech.jpg';
 import SEO from '@/components/SEO';
+import { useTranslate } from '@/hooks/useTranslate';
 
 // Google Icon Component
 const GoogleIcon = ({ className }: { className?: string }) => (
@@ -17,6 +18,7 @@ const GoogleIcon = ({ className }: { className?: string }) => (
 );
 
 const Home = () => {
+  const { t } = useTranslate();
   const allServices = getServicesByCategory('activity');
   const tours = getServicesByCategory('tour');
   const transportation = getServicesByCategory('transportation');
@@ -55,21 +57,21 @@ const Home = () => {
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-            Discover the Magic of Marrakech
+            {t('home.heroTitle')}
           </h1>
           <p className="text-xl md:text-2xl text-white/95 mb-8 drop-shadow-md">
-            Authentic tours, exciting activities, and reliable transportation with Oussaid Tourism
+            {t('home.heroSubtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/services">
               <Button variant="hero" size="lg">
-                Explore Services
+                {t('home.exploreServices')}
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
             <Link to="/contact">
               <Button variant="hero" size="lg">
-                Contact Us
+                {t('home.contactUs')}
               </Button>
             </Link>
           </div>
@@ -80,15 +82,13 @@ const Home = () => {
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">Welcome to Oussaid Tourism</h2>
+            <h2 className="text-4xl font-bold mb-6">{t('home.welcomeTitle')}</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Based in the heart of Marrakech, we specialize in creating unforgettable experiences 
-              that showcase the beauty, culture, and adventure of Morocco. With years of expertise 
-              and a passion for hospitality, we're your trusted partner for exploring this magical destination.
+              {t('home.welcomeText')}
             </p>
             <Link to="/about">
               <Button variant="secondary" size="lg">
-                Learn More About Us
+                {t('home.learnMore')}
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
@@ -101,12 +101,12 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl font-bold mb-2">Exciting Activities</h2>
-              <p className="text-muted-foreground">Thrilling adventures in Agafay, Palmeraie, and beyond</p>
+              <h2 className="text-4xl font-bold mb-2">{t('home.activitiesTitle')}</h2>
+              <p className="text-muted-foreground">{t('home.activitiesSubtitle')}</p>
             </div>
             <Link to="/activities">
               <Button variant="outline">
-                View All
+                {t('home.viewAll')}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
@@ -124,12 +124,12 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl font-bold mb-2">Popular Tours</h2>
-              <p className="text-muted-foreground">Discover Morocco's most beautiful destinations</p>
+              <h2 className="text-4xl font-bold mb-2">{t('home.toursTitle')}</h2>
+              <p className="text-muted-foreground">{t('home.toursSubtitle')}</p>
             </div>
             <Link to="/services">
               <Button variant="outline">
-                View All
+                {t('home.viewAll')}
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
@@ -147,8 +147,8 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl font-bold mb-2">Transportation Services</h2>
-              <p className="text-muted-foreground">Reliable and comfortable transfers across Morocco</p>
+              <h2 className="text-4xl font-bold mb-2">{t('home.transportationTitle')}</h2>
+              <p className="text-muted-foreground">{t('home.transportationSubtitle')}</p>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -162,15 +162,15 @@ const Home = () => {
       {/* Testimonials */}
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-8">What Our Clients Say</h2>
+          <h2 className="text-4xl font-bold text-center mb-8">{t('home.testimonials')}</h2>
           <div className="flex justify-center">
-            <Button 
-              variant="default" 
+            <Button
+              variant="default"
               size="lg"
               onClick={() => window.open('https://google.com', '_blank')}
             >
               <GoogleIcon className="w-5 h-5" />
-              Read Our Reviews on Google
+              {t('home.readReviews')}
             </Button>
           </div>
         </div>

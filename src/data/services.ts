@@ -564,12 +564,13 @@ export const services: Service[] = [
     description: 'Experience an unforgettable evening at Chez Ali with a world-class show featuring traditional Moroccan performances. The spectacular evening includes:\n\nCérémonie de bienvenue:\n• Saut de cheval arabe (Arabian horse jump)\n• Arrivée escortée par des cavaliers (Arrival escorted by cavalry)\n• Lancement de pétales de roses par les filles (Rose petal throw by dancers)\n• Spectacle de l\'homme bleu avec des torches (Blue man torch show)\n• Exposition sur cheval et fantaisie (Horse and fantasy exhibition)\n• Visite de la grotte d\'ali baba (Ali Baba cave visit)\n• Service d\'escorte à votre table (Table escort service)\n• Entrée majestueuse au restaurant (Majestic restaurant entrance)\n\nDuring dinner, enjoy performances from multiple regions:\n• Tiskiwine (Amz Miz)\n• Zayane (Khnifra)\n• Gnawa\n• Kelaa M\'Gouna\n• Ahwache Ouarzazate\n• Imin Tanout\n• Dekka (Marrakech)\n• Ahwache Ourika\n• Ait Ben Haddou (Azilal)\n• Guedra\n\nAfter dinner spectacular performances:\n• Danseuse du ventre (Belly dancer)\n• Spectacle Spectaculaire (Spectacular show)\n• Fantasia Spectaculaire (Spectacular fantasy)\n• Cascadeurs et spectacle de voltige d\'âne (Acrobats and donkey stunts)\n• Enchantement du tapis magique (Magic carpet enchantment)\n• Défilé de toute la troupe folklorique (Folk troupe parade)\n• Spectacle son et lumière (Sound and light show)\n• Coup final des cavaliers (Final cavalry performance)',
     price: '€35 / 350Dhs',
     duration: 'Evening | Departure at 6:00 PM',
-    image: 'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2Faa7d57cf66844e86870f59a73e628652?format=webp&width=800',
+    image: 'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2Fb02f7db953dd4888bac2b0824461fbb7?format=webp&width=800',
     location: 'Marrakech - Chez Ali',
     inclusions: ['Welcome ceremony', 'Arabian horse performances', 'Regional musical performances', 'Dinner (choice of menu)', 'Dance and acrobat performances', 'Sound and light show', 'Round-trip transport'],
     gallery: [
-      'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2Faa7d57cf66844e86870f59a73e628652?format=webp&width=800',
-      'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2F4a7e933f980e4a1e885ecda90853113d?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2Fb02f7db953dd4888bac2b0824461fbb7?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2Fd16c70bacb6b4e96a24a6bd9e597adb6?format=webp&width=800',
+      'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2Fd796b62a716c43a9b8f24b1e0546b89c?format=webp&width=800',
     ],
     variants: [
       {

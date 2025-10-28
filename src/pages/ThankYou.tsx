@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2, Home, Mail } from 'lucide-react';
+import { useTranslate } from '@/hooks/useTranslate';
 
 const ThankYou = () => {
+  const { t } = useTranslate();
   return (
     <div className="min-h-screen pt-24 pb-20 flex items-center justify-center bg-muted/30">
       <div className="container mx-auto px-4">
@@ -13,14 +15,14 @@ const ThankYou = () => {
             </div>
           </div>
 
-          <h1 className="text-5xl font-bold mb-4">Thank You for Booking!</h1>
-          
+          <h1 className="text-5xl font-bold mb-4">{t('thankYou.title') || 'Thank You for Booking!'}</h1>
+
           <p className="text-xl text-muted-foreground mb-8">
-            Your booking request has been successfully submitted to Oussaid Tourism.
+            {t('thankYou.subtitle') || 'Your booking request has been successfully submitted to Oussaid Tourism.'}
           </p>
 
           <div className="bg-card border border-border rounded-lg p-6 mb-8 text-left">
-            <h2 className="text-2xl font-semibold mb-4">What Happens Next?</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('thankYou.whatNext') || 'What Happens Next?'}</h2>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -41,12 +43,12 @@ const ThankYou = () => {
             <Link to="/">
               <Button size="lg" className="w-full sm:w-auto">
                 <Home className="w-5 h-5" />
-                Return to Home
+                {t('common.back')}
               </Button>
             </Link>
             <Link to="/contact">
               <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                Contact Us
+                {t('navbar.contact')}
               </Button>
             </Link>
           </div>

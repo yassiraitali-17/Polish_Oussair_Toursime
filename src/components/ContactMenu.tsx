@@ -4,20 +4,28 @@ import { MessageCircle, Phone, Mail, X } from 'lucide-react';
 const ContactMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // CONTACT CONFIGURATION: These are the contact options displayed in the floating contact menu.
+  // To update phone number, WhatsApp, or email, modify the values below.
+  // Phone: Format is international (e.g., +212707704981 for Morocco)
+  // WhatsApp: Format is https://wa.me/PHONE_NUMBER without + or spaces
+  // Email: Use mailto: prefix for email links
   const contactOptions = [
     {
       icon: MessageCircle,
       label: 'WhatsApp',
+      // PHONE/WHATSAPP CONFIGURATION: Update this phone number to change WhatsApp contact
       action: () => window.open('https://wa.me/212707704981', '_blank'),
     },
     {
       icon: Phone,
       label: 'Call',
+      // PHONE CONFIGURATION: Update this phone number to change the call link
       action: () => window.location.href = 'tel:+212707704981',
     },
     {
       icon: Mail,
       label: 'Email',
+      // EMAIL CONFIGURATION: Update this email address to change the contact email
       action: () => window.location.href = 'mailto:obenhadya@gmail.com',
     },
   ];
