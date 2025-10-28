@@ -211,19 +211,19 @@ const Checkout = () => {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
           </Button>
-          <h1 className="text-4xl font-bold mb-8">Complete Your Booking</h1>
+          <h1 className="text-4xl font-bold mb-8">{t('common.bookNow')}</h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Booking Form */}
             <div className="lg:col-span-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>Your Information</CardTitle>
+                  <CardTitle>{t('checkout.yourInfo') || 'Your Information'}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">{t('common.name')} *</Label>
                       <div className="relative">
                         <User className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
                         <Input
@@ -239,7 +239,7 @@ const Checkout = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">{t('common.email')} *</Label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
                         <Input
@@ -256,7 +256,7 @@ const Checkout = () => {
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Label htmlFor="phone">{t('common.phone')} *</Label>
                       <div className="relative">
                         <Phone className="absolute left-3 top-3 w-5 h-5 text-muted-foreground" />
                         <Input
