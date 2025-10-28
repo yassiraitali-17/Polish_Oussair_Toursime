@@ -6,8 +6,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslate } from '@/hooks/useTranslate';
 
 const Contact = () => {
+  const { t } = useTranslate();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
