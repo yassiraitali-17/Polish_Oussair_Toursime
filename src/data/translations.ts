@@ -167,6 +167,14 @@ export const translations: Record<Language, Record<string, any>> = {
       error: 'Erreur',
       errorDesc: 'Échec de l\'envoi du message. Veuillez réessayer ou nous contacter directement.',
     },
+    checkout: {
+      yourInfo: 'Vos Informations',
+    },
+    thankYou: {
+      title: 'Merci de Votre Réservation!',
+      subtitle: 'Votre demande de réservation a été soumise avec succès à Oussaid Tourism.',
+      whatNext: 'Que se passe-t-il ensuite?',
+    },
     footer: {
       quickLinks: 'Liens Rapides',
       contactInfo: 'Contact',
