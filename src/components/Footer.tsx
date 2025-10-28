@@ -10,6 +10,7 @@ const TikTokIcon = () => (
 );
 
 const Footer = () => {
+  const { t } = useTranslate();
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
