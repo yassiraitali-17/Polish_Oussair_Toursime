@@ -53,21 +53,21 @@ const Contact = () => {
 
       if (response.ok) {
         toast({
-          title: 'Message Sent!',
-          description: 'Thank you for contacting us. We\'ll get back to you soon!',
+          title: t('contact.messageSent'),
+          description: t('contact.messageSentDesc'),
         });
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
         toast({
-          title: 'Submission Error',
-          description: 'There was a problem sending your message. Please try again.',
+          title: t('contact.submissionError'),
+          description: t('contact.submissionErrorDesc'),
           variant: 'destructive',
         });
       }
     } catch (error) {
       toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again or contact us directly.',
+        title: t('contact.error'),
+        description: t('contact.errorDesc'),
         variant: 'destructive',
       });
     } finally {
