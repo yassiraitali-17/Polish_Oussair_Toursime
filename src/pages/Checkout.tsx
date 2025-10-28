@@ -9,8 +9,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { getServiceById, getVariantById } from '@/data/services';
 import { Calendar, Users, Mail, Phone, User, ArrowLeft, MapPin, Plane } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslate } from '@/hooks/useTranslate';
 
 const Checkout = () => {
+  const { t } = useTranslate();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { toast } = useToast();
