@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2, Home, Mail } from 'lucide-react';
+import { useTranslate } from '@/hooks/useTranslate';
 
 const ThankYou = () => {
+  const { t } = useTranslate();
   return (
     <div className="min-h-screen pt-24 pb-20 flex items-center justify-center bg-muted/30">
       <div className="container mx-auto px-4">
