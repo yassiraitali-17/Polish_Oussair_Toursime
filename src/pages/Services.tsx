@@ -69,9 +69,9 @@ const Services = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">Our Services</h1>
+          <h1 className="text-5xl font-bold mb-4">{t('services.title')}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our complete range of activities, tours, and transportation services
+            {t('services.filter')}
           </p>
         </div>
 
