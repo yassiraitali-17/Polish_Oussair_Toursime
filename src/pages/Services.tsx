@@ -7,8 +7,10 @@ import agafayHero from '@/assets/agafay-hero.jpg';
 import palmeraieHero from '@/assets/palmeraie-hero.jpg';
 import heroMarrakech from '@/assets/hero-marrakech.jpg';
 import SEO from '@/components/SEO';
+import { useTranslate } from '@/hooks/useTranslate';
 
 const Services = () => {
+  const { t } = useTranslate();
   const [activeFilter, setActiveFilter] = useState<'all' | 'activity' | 'tour' | 'transportation'>('all');
   const [activeSubcategory, setActiveSubcategory] = useState<string | null>(null);
 
