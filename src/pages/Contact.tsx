@@ -45,8 +45,8 @@ const Contact = () => {
       // EMAIL CONFIGURATION: This is the FormSubmit endpoint that receives contact form submissions.
       // To change the email address, update the URL below to point to a different email address.
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
-      // This can be easily changed to any email address by replacing 'aitaliyassir55@gmail.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/aitaliyassir55@gmail.com';
+      // This can be easily changed to any email address by replacing 'yassiraitali17@gmail.com' with your desired email.
+      const formSubmitUrl = 'https://formsubmit.co/yassiraitali17@gmail.com';
 
       const submissionData = new FormData();
       Object.entries({
