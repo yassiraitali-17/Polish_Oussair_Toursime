@@ -53,7 +53,6 @@ const Contact = () => {
         ...formData,
         _subject: 'New Contact Form Submission - Oussaid Tourism',
         _template: 'table',
-        _captcha: 'false',
       }).forEach(([key, value]) => {
         submissionData.append(key, String(value));
       });
@@ -63,13 +62,15 @@ const Contact = () => {
         body: submissionData,
       });
 
-      if (response.ok || response.status === 303) {
+      // FormSubmit returns 303 on success, but also accepts 2xx responses
+      if (response.ok || response.status === 303 || response.status === 200) {
         toast({
           title: t('contact.messageSent'),
           description: t('contact.messageSentDesc'),
         });
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
+        console.error('FormSubmit response:', response.status, response.statusText);
         toast({
           title: t('contact.submissionError'),
           description: t('contact.submissionErrorDesc'),
