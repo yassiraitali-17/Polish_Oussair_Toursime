@@ -114,6 +114,10 @@ const ServiceDetail = () => {
                 src={service.image}
                 alt={service.title}
                 className="w-full h-96 object-cover rounded-2xl shadow-elegant"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
               />
             </div>
           )}
