@@ -30,8 +30,16 @@ export default defineConfig(({ mode }) => ({
             '@radix-ui/react-alert-dialog',
             '@radix-ui/react-dialog',
             '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-select'
+            '@radix-ui/react-select',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-tooltip'
           ],
+          'charts': ['recharts'],
+          'carousel': ['embla-carousel-react'],
+          'icons': ['lucide-react'],
+          'dates': ['date-fns', 'react-day-picker'],
+          'forms': ['@hookform/resolvers', 'react-hook-form']
         }
       }
     },
