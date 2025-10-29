@@ -89,6 +89,17 @@ const Checkout = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !formData.nationality) {
+      toast({
+        title: 'Missing Information',
+        description: 'Please fill in all required fields.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -97,8 +108,8 @@ const Checkout = () => {
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
       // This can be easily changed to any email address by replacing 'aitaliyassir55@gmail.com' with your desired email.
       const formSubmitUrl = 'https://formsubmit.co/aitaliyassir55@gmail.com';
-      
-      let bookingData;
+
+      let bookingData: Record<string, any>;
 
       const serviceTitle = selectedVariant ? `${service?.title} - ${selectedVariant.label}` : service?.title;
 
@@ -116,6 +127,7 @@ const Checkout = () => {
           price: displayPrice,
           _subject: `New Rental Booking: ${serviceTitle}`,
           _template: 'table',
+          _captcha: 'false',
         };
       } else if (service?.id === 'airport-transfer') {
         bookingData = {
@@ -133,6 +145,7 @@ const Checkout = () => {
           price: displayPrice,
           _subject: `New Airport Transfer Booking: ${serviceTitle}`,
           _template: 'table',
+          _captcha: 'false',
         };
       } else {
         const totalPrice = service?.priceVariants ? getTotalPriceDisplay() : displayPrice;
@@ -154,20 +167,21 @@ const Checkout = () => {
           price: totalPrice,
           _subject: `New Booking: ${serviceTitle}`,
           _template: 'table',
+          _captcha: 'false',
         };
       }
 
-      const formData = new FormData();
+      const submitFormData = new FormData();
       Object.entries(bookingData).forEach(([key, value]) => {
-        formData.append(key, String(value));
+        submitFormData.append(key, String(value));
       });
 
       const response = await fetch(formSubmitUrl, {
         method: 'POST',
-        body: formData,
+        body: submitFormData,
       });
 
-      if (response.ok) {
+      if (response.ok || response.status === 303) {
         navigate('/thank-you', { state: { bookingData } });
       } else {
         toast({
@@ -175,14 +189,15 @@ const Checkout = () => {
           description: 'There was a problem submitting your booking. Please try again.',
           variant: 'destructive',
         });
+        setIsSubmitting(false);
       }
     } catch (error) {
+      console.error('Booking submission error:', error);
       toast({
         title: 'Error',
         description: 'Failed to submit booking. Please try again or contact us directly.',
         variant: 'destructive',
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
