@@ -28,6 +28,17 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: 'Missing Information',
+        description: 'Please fill in all required fields.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -36,12 +47,13 @@ const Contact = () => {
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
       // This can be easily changed to any email address by replacing 'aitaliyassir55@gmail.com' with your desired email.
       const formSubmitUrl = 'https://formsubmit.co/aitaliyassir55@gmail.com';
-      
+
       const submissionData = new FormData();
       Object.entries({
         ...formData,
         _subject: 'New Contact Form Submission - Oussaid Tourism',
         _template: 'table',
+        _captcha: 'false',
       }).forEach(([key, value]) => {
         submissionData.append(key, String(value));
       });
@@ -51,7 +63,7 @@ const Contact = () => {
         body: submissionData,
       });
 
-      if (response.ok) {
+      if (response.ok || response.status === 303) {
         toast({
           title: t('contact.messageSent'),
           description: t('contact.messageSentDesc'),
@@ -63,14 +75,15 @@ const Contact = () => {
           description: t('contact.submissionErrorDesc'),
           variant: 'destructive',
         });
+        setIsSubmitting(false);
       }
     } catch (error) {
+      console.error('Contact form submission error:', error);
       toast({
         title: t('contact.error'),
         description: t('contact.errorDesc'),
         variant: 'destructive',
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
