@@ -98,7 +98,7 @@ export const services: Service[] = [
     id: 'agafay-pack-complet',
     category: 'activity',
     subcategory: 'agafay',
-    title: 'Pack Complet',
+    title: 'Agafay Complete Pack',
     shortDescription: '1h quad, 30min camel, dinner show, pool access',
     description: 'Includes 1h quad, 30min camel ride, dinner with show and fire performance, pool access, and round-trip transport.',
     price: '€66 / 660Dhs',
@@ -568,7 +568,6 @@ export const services: Service[] = [
     location: 'Marrakech - Chez Ali',
     inclusions: ['Welcome ceremony', 'Arabian horse performances', 'Regional musical performances', 'Dinner (choice of menu)', 'Dance and acrobat performances', 'Sound and light show', 'Round-trip transport'],
     gallery: [
-      'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2Fb02f7db953dd4888bac2b0824461fbb7?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2Fd16c70bacb6b4e96a24a6bd9e597adb6?format=webp&width=800',
       'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2Fd796b62a716c43a9b8f24b1e0546b89c?format=webp&width=800',
     ],
