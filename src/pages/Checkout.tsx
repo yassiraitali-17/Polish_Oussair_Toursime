@@ -587,7 +587,7 @@ const Checkout = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="aspect-video rounded-lg overflow-hidden">
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" />
                   </div>
                   
                   <div>
