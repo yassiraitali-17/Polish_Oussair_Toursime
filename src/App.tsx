@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,18 +8,30 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./components/LoadingScreen";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Activities from "./pages/Activities";
-import AgafayActivities from "./pages/AgafayActivities";
-import PalmeraieActivities from "./pages/PalmeraieActivities";
-import OtherActivities from "./pages/OtherActivities";
-import ServiceDetail from "./pages/ServiceDetail";
-import Checkout from "./pages/Checkout";
-import ThankYou from "./pages/ThankYou";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+
+const Home = lazy(() => import("./pages/Home"));
+const Services = lazy(() => import("./pages/Services"));
+const Activities = lazy(() => import("./pages/Activities"));
+const AgafayActivities = lazy(() => import("./pages/AgafayActivities"));
+const PalmeraieActivities = lazy(() => import("./pages/PalmeraieActivities"));
+const OtherActivities = lazy(() => import("./pages/OtherActivities"));
+const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
+const Checkout = lazy(() => import("./pages/Checkout"));
+const ThankYou = lazy(() => import("./pages/ThankYou"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+
+const RouteSuspenseFallback = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="text-center">
+      <div className="inline-block">
+        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+      </div>
+      <p className="mt-4 text-muted-foreground">Loading...</p>
+    </div>
+  </div>
+);
 
 const queryClient = new QueryClient();
 
