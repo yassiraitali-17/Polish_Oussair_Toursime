@@ -28,15 +28,26 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: 'Missing Information',
+        description: 'Please fill in all required fields.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       // EMAIL CONFIGURATION: This is the FormSubmit endpoint that receives contact form submissions.
       // To change the email address, update the URL below to point to a different email address.
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
-      // This can be easily changed to any email address by replacing 'aitaliyassir55@gmail.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/aitaliyassir55@gmail.com';
-      
+      // This can be easily changed to any email address by replacing 'yassiraitali17@gmail.com' with your desired email.
+      const formSubmitUrl = 'https://formsubmit.co/yassiraitali17@gmail.com';
+
       const submissionData = new FormData();
       Object.entries({
         ...formData,
@@ -51,26 +62,29 @@ const Contact = () => {
         body: submissionData,
       });
 
-      if (response.ok) {
+      // FormSubmit returns 303 on success, but also accepts 2xx responses
+      if (response.ok || response.status === 303 || response.status === 200) {
         toast({
           title: t('contact.messageSent'),
           description: t('contact.messageSentDesc'),
         });
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
+        console.error('FormSubmit response:', response.status, response.statusText);
         toast({
           title: t('contact.submissionError'),
           description: t('contact.submissionErrorDesc'),
           variant: 'destructive',
         });
+        setIsSubmitting(false);
       }
     } catch (error) {
+      console.error('Contact form submission error:', error);
       toast({
         title: t('contact.error'),
         description: t('contact.errorDesc'),
         variant: 'destructive',
       });
-    } finally {
       setIsSubmitting(false);
     }
   };

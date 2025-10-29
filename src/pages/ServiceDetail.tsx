@@ -15,6 +15,7 @@ const ServiceDetail = () => {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [selectedVariant, setSelectedVariant] = useState(service?.variants?.[0]);
   const [showVariantsDropdown, setShowVariantsDropdown] = useState(false);
+  const [personsCount, setPersonsCount] = useState<number>(1);
 
   const currentPrice = selectedVariant?.price || service?.price;
   const currentDescription = selectedVariant?.description || service?.description;
@@ -31,6 +32,16 @@ const ServiceDetail = () => {
       total += variant.priceNumeric * qty;
     });
     return total;
+  };
+
+  const extractNumericPrice = (priceString: string): number => {
+    const match = priceString.match(/€(\d+(?:\.\d+)?)/);
+    return match ? parseFloat(match[1]) : 0;
+  };
+
+  const calculateSingleServiceTotal = (): number => {
+    const numericPrice = extractNumericPrice(currentPrice);
+    return numericPrice * personsCount;
   };
 
   const handleQuantityChange = (index: number, value: string) => {
@@ -103,6 +114,10 @@ const ServiceDetail = () => {
                 src={service.image}
                 alt={service.title}
                 className="w-full h-96 object-cover rounded-2xl shadow-elegant"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
               />
             </div>
           )}
@@ -150,9 +165,30 @@ const ServiceDetail = () => {
                 </div>
               ) : (
                 <div className="mb-6">
-                  <div className="text-sm text-muted-foreground mb-2">From</div>
-                  <div className="text-4xl font-bold text-primary">{currentPrice}</div>
-                  <div className="text-sm text-muted-foreground">per person</div>
+                  <div className="text-sm text-muted-foreground mb-2">Price Per Person</div>
+                  <div className="text-4xl font-bold text-primary mb-4">{currentPrice}</div>
+
+                  <div className="space-y-3 mb-4">
+                    <Label htmlFor="persons-count" className="text-sm">Number of Persons</Label>
+                    <div className="relative">
+                      <Users className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
+                      <Input
+                        id="persons-count"
+                        type="number"
+                        min="1"
+                        value={personsCount}
+                        onChange={(e) => setPersonsCount(Math.max(1, parseInt(e.target.value) || 1))}
+                        className="pl-9"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="bg-primary/10 rounded-lg p-4 mb-4">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-sm">Total Price</span>
+                      <span className="text-2xl font-bold text-primary">€{calculateSingleServiceTotal()}</span>
+                    </div>
+                  </div>
                 </div>
               )}
 

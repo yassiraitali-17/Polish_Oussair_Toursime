@@ -30,6 +30,7 @@ const Checkout = () => {
     name: '',
     email: '',
     phone: '',
+    nationality: '',
     date: '',
     persons: '1',
     adultsCount: '1',
@@ -42,7 +43,6 @@ const Checkout = () => {
     customFrom: '',
     customTo: '',
     flightNumber: '',
-    horseLabel: '',
   });
 
   const calculateDays = () => {
@@ -78,6 +78,19 @@ const Checkout = () => {
     return displayPrice;
   };
 
+  const extractNumericPrice = (priceString: string): number => {
+    const match = priceString.match(/€(\d+(?:\.\d+)?)/);
+    return match ? parseFloat(match[1]) : 0;
+  };
+
+  const calculateRegularServiceTotal = (): string => {
+    const numericPrice = extractNumericPrice(displayPrice);
+    const personsCount = parseInt(formData.persons) || 1;
+    const total = numericPrice * personsCount;
+    const dhs = Math.round(total * 10);
+    return `€${total} / ${dhs}Dhs`;
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -89,16 +102,27 @@ const Checkout = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !formData.nationality) {
+      toast({
+        title: 'Missing Information',
+        description: 'Please fill in all required fields.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
       // EMAIL CONFIGURATION: This is the FormSubmit endpoint that receives booking form submissions.
       // To change the email address, update the URL below to point to a different email address.
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
-      // This can be easily changed to any email address by replacing 'aitaliyassir55@gmail.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/aitaliyassir55@gmail.com';
-      
-      let bookingData;
+      // This can be easily changed to any email address by replacing 'yassiraitali17@gmail.com' with your desired email.
+      const formSubmitUrl = 'https://formsubmit.co/yassiraitali17@gmail.com';
+
+      let bookingData: Record<string, any>;
 
       const serviceTitle = selectedVariant ? `${service?.title} - ${selectedVariant.label}` : service?.title;
 
@@ -107,6 +131,7 @@ const Checkout = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
+          nationality: formData.nationality,
           from: formData.startDate,
           to: formData.endDate,
           number_of_days: calculateDays(),
@@ -121,12 +146,12 @@ const Checkout = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
+          nationality: formData.nationality,
           date: formData.date,
           persons: formData.persons,
           from: formData.from === 'Custom' ? formData.customFrom : formData.from,
           to: formData.to === 'Custom' ? formData.customTo : formData.to,
           flight_number: formData.flightNumber,
-          reference_label: formData.horseLabel,
           message: formData.message,
           service: serviceTitle,
           price: displayPrice,
@@ -139,6 +164,7 @@ const Checkout = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
+          nationality: formData.nationality,
           date: formData.date,
           ...(service?.priceVariants ? {
             adults: formData.adultsCount,
@@ -155,32 +181,35 @@ const Checkout = () => {
         };
       }
 
-      const formData = new FormData();
+      const submitFormData = new FormData();
       Object.entries(bookingData).forEach(([key, value]) => {
-        formData.append(key, String(value));
+        submitFormData.append(key, String(value));
       });
 
       const response = await fetch(formSubmitUrl, {
         method: 'POST',
-        body: formData,
+        body: submitFormData,
       });
 
-      if (response.ok) {
-        navigate('/thank-you');
+      // FormSubmit returns 303 on success, but also accepts 2xx responses
+      if (response.ok || response.status === 303 || response.status === 200) {
+        navigate('/thank-you', { state: { bookingData } });
       } else {
+        console.error('FormSubmit response:', response.status, response.statusText);
         toast({
           title: 'Submission Error',
           description: 'There was a problem submitting your booking. Please try again.',
           variant: 'destructive',
         });
+        setIsSubmitting(false);
       }
     } catch (error) {
+      console.error('Booking submission error:', error);
       toast({
         title: 'Error',
         description: 'Failed to submit booking. Please try again or contact us directly.',
         variant: 'destructive',
       });
-    } finally {
       setIsSubmitting(false);
     }
   };
@@ -270,6 +299,18 @@ const Checkout = () => {
                           placeholder="+212 XXX XXX XXX"
                         />
                       </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="nationality">Nationality *</Label>
+                      <Input
+                        id="nationality"
+                        name="nationality"
+                        value={formData.nationality}
+                        onChange={handleChange}
+                        required
+                        placeholder="Enter your nationality"
+                      />
                     </div>
 
                     {service?.isRental ? (
@@ -437,17 +478,6 @@ const Checkout = () => {
                             />
                           </div>
                         </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="horseLabel">Reference/Horse Label</Label>
-                          <Input
-                            id="horseLabel"
-                            name="horseLabel"
-                            value={formData.horseLabel}
-                            onChange={handleChange}
-                            placeholder="For tracking purposes"
-                          />
-                        </div>
                       </div>
                     ) : (
                       <div className="space-y-4">
@@ -557,7 +587,7 @@ const Checkout = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="aspect-video rounded-lg overflow-hidden">
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="450" />
                   </div>
                   
                   <div>
@@ -585,6 +615,13 @@ const Checkout = () => {
                       <span className="font-medium">{service.location}</span>
                     </div>
 
+                    {!service?.priceVariants && !service?.isRental && !selectedVariant && (
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Price per person</span>
+                        <span className="font-medium">{displayPrice}</span>
+                      </div>
+                    )}
+
                     {service?.priceVariants ? (
                       <div className="pt-4 border-t space-y-2">
                         <div className="flex justify-between text-sm">
@@ -604,8 +641,8 @@ const Checkout = () => {
                       </div>
                     ) : (
                       <div className="flex justify-between items-center pt-4 border-t">
-                        <span className="font-semibold">Price per person</span>
-                        <span className="text-2xl font-bold text-primary">{displayPrice}</span>
+                        <span className="font-semibold">Total Price</span>
+                        <span className="text-2xl font-bold text-primary">{calculateRegularServiceTotal()}</span>
                       </div>
                     )}
                   </div>
