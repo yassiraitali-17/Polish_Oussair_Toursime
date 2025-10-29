@@ -59,23 +59,25 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <ScrollToTop />
-            <Routes>
-              <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/services" element={<Services />} />
-                <Route path="/activities" element={<Activities />} />
-                <Route path="/activities/agafay" element={<AgafayActivities />} />
-                <Route path="/activities/palmeraie" element={<PalmeraieActivities />} />
-                <Route path="/activities/other" element={<OtherActivities />} />
-                <Route path="/service/:id" element={<ServiceDetail />} />
-                <Route path="/checkout/:id" element={<Checkout />} />
-                <Route path="/thank-you" element={<ThankYou />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Route>
-            </Routes>
+            <Suspense fallback={<RouteSuspenseFallback />}>
+              <Routes>
+                <Route element={<Layout />}>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/activities" element={<Activities />} />
+                  <Route path="/activities/agafay" element={<AgafayActivities />} />
+                  <Route path="/activities/palmeraie" element={<PalmeraieActivities />} />
+                  <Route path="/activities/other" element={<OtherActivities />} />
+                  <Route path="/service/:id" element={<ServiceDetail />} />
+                  <Route path="/checkout/:id" element={<Checkout />} />
+                  <Route path="/thank-you" element={<ThankYou />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Route>
+              </Routes>
+            </Suspense>
           </BrowserRouter>
         </LanguageProvider>
       </TooltipProvider>
