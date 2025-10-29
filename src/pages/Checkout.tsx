@@ -166,7 +166,7 @@ const Checkout = () => {
       });
 
       if (response.ok) {
-        navigate('/thank-you');
+        navigate('/thank-you', { state: { bookingData } });
       } else {
         toast({
           title: 'Submission Error',
