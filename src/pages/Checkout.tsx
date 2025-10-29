@@ -30,6 +30,7 @@ const Checkout = () => {
     name: '',
     email: '',
     phone: '',
+    nationality: '',
     date: '',
     persons: '1',
     adultsCount: '1',
@@ -42,7 +43,6 @@ const Checkout = () => {
     customFrom: '',
     customTo: '',
     flightNumber: '',
-    horseLabel: '',
   });
 
   const calculateDays = () => {
