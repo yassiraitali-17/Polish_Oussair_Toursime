@@ -34,6 +34,16 @@ const ServiceDetail = () => {
     return total;
   };
 
+  const extractNumericPrice = (priceString: string): number => {
+    const match = priceString.match(/€(\d+(?:\.\d+)?)/);
+    return match ? parseFloat(match[1]) : 0;
+  };
+
+  const calculateSingleServiceTotal = (): number => {
+    const numericPrice = extractNumericPrice(currentPrice);
+    return numericPrice * personsCount;
+  };
+
   const handleQuantityChange = (index: number, value: string) => {
     const qty = parseInt(value) || 0;
     setQuantities(prev => ({ ...prev, [index]: qty }));
