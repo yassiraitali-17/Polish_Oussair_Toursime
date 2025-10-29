@@ -127,7 +127,6 @@ const Checkout = () => {
           price: displayPrice,
           _subject: `New Rental Booking: ${serviceTitle}`,
           _template: 'table',
-          _captcha: 'false',
         };
       } else if (service?.id === 'airport-transfer') {
         bookingData = {
@@ -145,7 +144,6 @@ const Checkout = () => {
           price: displayPrice,
           _subject: `New Airport Transfer Booking: ${serviceTitle}`,
           _template: 'table',
-          _captcha: 'false',
         };
       } else {
         const totalPrice = service?.priceVariants ? getTotalPriceDisplay() : displayPrice;
@@ -167,7 +165,6 @@ const Checkout = () => {
           price: totalPrice,
           _subject: `New Booking: ${serviceTitle}`,
           _template: 'table',
-          _captcha: 'false',
         };
       }
 
@@ -181,9 +178,11 @@ const Checkout = () => {
         body: submitFormData,
       });
 
-      if (response.ok || response.status === 303) {
+      // FormSubmit returns 303 on success, but also accepts 2xx responses
+      if (response.ok || response.status === 303 || response.status === 200) {
         navigate('/thank-you', { state: { bookingData } });
       } else {
+        console.error('FormSubmit response:', response.status, response.statusText);
         toast({
           title: 'Submission Error',
           description: 'There was a problem submitting your booking. Please try again.',
