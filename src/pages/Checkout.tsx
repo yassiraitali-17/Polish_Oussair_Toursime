@@ -88,7 +88,7 @@ const Checkout = () => {
     const personsCount = parseInt(formData.persons) || 1;
     const total = numericPrice * personsCount;
     const dhs = Math.round(total * 10);
-    return `���${total} / ${dhs}Dhs`;
+    return `€${total} / ${dhs}Dhs`;
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -119,7 +119,7 @@ const Checkout = () => {
       // EMAIL CONFIGURATION: This is the FormSubmit endpoint that receives booking form submissions.
       // To change the email address, update the URL below to point to a different email address.
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
-      // This can be easily changed to any email address by replacing 'aitaliyassir55@gmail.com' with your desired email.
+      // This can be easily changed to any email address by replacing 'yassiraitali17@gmail.com' with your desired email.
       const formSubmitUrl = 'https://formsubmit.co/yassiraitali17@gmail.com';
 
       let bookingData: Record<string, any>;
