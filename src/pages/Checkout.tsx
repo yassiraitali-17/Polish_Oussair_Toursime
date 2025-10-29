@@ -451,17 +451,6 @@ const Checkout = () => {
                             />
                           </div>
                         </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="horseLabel">Reference/Horse Label</Label>
-                          <Input
-                            id="horseLabel"
-                            name="horseLabel"
-                            value={formData.horseLabel}
-                            onChange={handleChange}
-                            placeholder="For tracking purposes"
-                          />
-                        </div>
                       </div>
                     ) : (
                       <div className="space-y-4">
