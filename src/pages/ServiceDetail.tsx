@@ -15,6 +15,7 @@ const ServiceDetail = () => {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [selectedVariant, setSelectedVariant] = useState(service?.variants?.[0]);
   const [showVariantsDropdown, setShowVariantsDropdown] = useState(false);
+  const [personsCount, setPersonsCount] = useState<number>(1);
 
   const currentPrice = selectedVariant?.price || service?.price;
   const currentDescription = selectedVariant?.description || service?.description;
