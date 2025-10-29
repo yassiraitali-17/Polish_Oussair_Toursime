@@ -78,6 +78,19 @@ const Checkout = () => {
     return displayPrice;
   };
 
+  const extractNumericPrice = (priceString: string): number => {
+    const match = priceString.match(/€(\d+(?:\.\d+)?)/);
+    return match ? parseFloat(match[1]) : 0;
+  };
+
+  const calculateRegularServiceTotal = (): string => {
+    const numericPrice = extractNumericPrice(displayPrice);
+    const personsCount = parseInt(formData.persons) || 1;
+    const total = numericPrice * personsCount;
+    const dhs = Math.round(total * 10);
+    return `���${total} / ${dhs}Dhs`;
+  };
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -107,7 +120,7 @@ const Checkout = () => {
       // To change the email address, update the URL below to point to a different email address.
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
       // This can be easily changed to any email address by replacing 'aitaliyassir55@gmail.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/aitaliyassir55@gmail.com';
+      const formSubmitUrl = 'https://formsubmit.co/yassiraitali17@gmail.com';
 
       let bookingData: Record<string, any>;
 
@@ -602,6 +615,13 @@ const Checkout = () => {
                       <span className="font-medium">{service.location}</span>
                     </div>
 
+                    {!service?.priceVariants && !service?.isRental && !selectedVariant && (
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Price per person</span>
+                        <span className="font-medium">{displayPrice}</span>
+                      </div>
+                    )}
+
                     {service?.priceVariants ? (
                       <div className="pt-4 border-t space-y-2">
                         <div className="flex justify-between text-sm">
@@ -621,8 +641,8 @@ const Checkout = () => {
                       </div>
                     ) : (
                       <div className="flex justify-between items-center pt-4 border-t">
-                        <span className="font-semibold">Price per person</span>
-                        <span className="text-2xl font-bold text-primary">{displayPrice}</span>
+                        <span className="font-semibold">Total Price</span>
+                        <span className="text-2xl font-bold text-primary">{calculateRegularServiceTotal()}</span>
                       </div>
                     )}
                   </div>
