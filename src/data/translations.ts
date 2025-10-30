@@ -18,9 +18,16 @@ export const translations: Record<Language, Record<string, any>> = {
       welcomeText: 'Based in the heart of Marrakech, we specialize in creating unforgettable experiences that showcase the beauty, culture, and adventure of Morocco. With years of expertise and a passion for hospitality, we\'re your trusted partner for exploring this magical destination.',
       learnMore: 'Learn More About Us',
       activitiesTitle: 'Popular Activities',
+      activitiesSubtitle: 'Thrilling adventures in Agafay, Palmeraie and beyond',
       toursTitle: 'Guided Tours',
+      toursSubtitle: 'Discover the most beautiful destinations of Morocco',
       transportationTitle: 'Transportation Services',
+      transportationSubtitle: 'Reliable and comfortable transfers across Morocco',
       viewAll: 'View All Services',
+    },
+    testimonials: {
+      title: 'What Our Clients Say',
+      readReviews: 'See All Reviews',
     },
     services: {
       title: 'Our Services',
