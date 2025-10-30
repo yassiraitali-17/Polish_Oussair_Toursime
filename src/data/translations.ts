@@ -151,8 +151,10 @@ export const translations: Record<Language, Record<string, any>> = {
       transportationTitle: 'Services de Transport',
       transportationSubtitle: 'Transferts fiables et confortables à travers le Maroc',
       viewAll: 'Voir Tous les Services',
-      testimonials: 'Ce que nos Clients Disent',
-      readReviews: 'Lire Nos Avis sur Google',
+    },
+    testimonials: {
+      title: 'Ce que nos Clients Disent',
+      readReviews: 'Voir Tous les Avis',
     },
     services: {
       title: 'Nos Services',
