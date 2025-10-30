@@ -49,12 +49,7 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
         }`}
       >
         {/* Logo with rotating animation */}
-        <div
-          className="relative w-32 h-32 mb-8"
-          style={{
-            animation: 'spin 2s linear infinite'
-          }}
-        >
+        <div className="relative w-32 h-32 mb-8 animate-spin">
           <img
             src={logoIcon}
             alt="OUSSAID Icon"
