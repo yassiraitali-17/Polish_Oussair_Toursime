@@ -48,32 +48,17 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
           stage === 'complete' ? '-translate-y-24 scale-90' : 'translate-y-0 scale-100'
         }`}
       >
-        {/* Icon - Geometric line drawing with golden shimmer */}
+        {/* Logo with rotating animation */}
         <div
           className="relative w-32 h-32 mb-8"
           style={{
-            animation: stage !== 'icon' ? 'icon-settle 400ms cubic-bezier(0.34, 1.56, 0.64, 1) 0ms forwards' : 'none'
+            animation: 'spin 2s linear infinite'
           }}
         >
-          {/* Golden reflection layer */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle at 60% 40%, hsl(45 100% 70% / 0.2) 0%, transparent 60%)',
-              animation: stage !== 'icon' ? 'golden-shimmer 500ms cubic-bezier(0.4, 0.0, 0.2, 1) 450ms forwards' : 'none',
-              opacity: 0,
-              mixBlendMode: 'overlay'
-            }}
-          />
-          
           <img
             src={logoIcon}
             alt="OUSSAID Icon"
-            className="w-full h-full object-contain relative"
-            style={{
-              animation: 'line-draw 500ms cubic-bezier(0.65, 0, 0.35, 1) 0ms forwards',
-              filter: 'drop-shadow(0 0 20px hsl(182 54% 42% / 0))'
-            }}
+            className="w-full h-full object-contain"
           />
         </div>
 
