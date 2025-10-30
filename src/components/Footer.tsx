@@ -43,7 +43,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-sm">Marrakech, Morocco</span>
+                <span className="text-sm">18 Yacoub El Mansour Street<br />Next to Majorelle Gardens<br />Marrakech, Morocco</span>
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
