@@ -111,7 +111,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-2">{t('contact.visitUs')}</h3>
                     <p className="text-muted-foreground">
-                      Marrakech Medina<br />
+                      18 Yacoub El Mansour Street<br />
+                      Next to Majorelle Gardens<br />
                       Marrakech, Morocco
                     </p>
                   </div>
