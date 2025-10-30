@@ -162,15 +162,19 @@ const Home = () => {
       {/* Testimonials */}
       <section className="py-12 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-8">{t('home.testimonials')}</h2>
+          <h2 className="text-4xl font-bold text-center mb-8">{t('testimonials.title')}</h2>
           <div className="flex justify-center">
             <Button
               variant="default"
               size="lg"
-              onClick={() => window.open('https://google.com', '_blank')}
+              onClick={() => {
+                // TODO: Replace with your Google Business profile URL
+                // Example: https://www.google.com/maps/place/Oussaid+Tourism/@YOUR_COORDINATES/YOUR_PLACE_ID
+                window.open('https://google.com', '_blank');
+              }}
             >
               <GoogleIcon className="w-5 h-5" />
-              {t('home.readReviews')}
+              {t('testimonials.readReviews')}
             </Button>
           </div>
         </div>

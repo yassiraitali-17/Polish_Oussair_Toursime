@@ -9,6 +9,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import LoadingScreen from "./components/LoadingScreen";
+import logoIcon from "@/assets/logo-icon.png";
 
 const Home = lazy(() => import("./pages/Home"));
 const Services = lazy(() => import("./pages/Services"));
@@ -26,8 +27,12 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const RouteSuspenseFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
     <div className="text-center">
-      <div className="inline-block">
-        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+      <div className="w-16 h-16 animate-spin">
+        <img
+          src={logoIcon}
+          alt="Loading"
+          className="w-full h-full object-contain"
+        />
       </div>
       <p className="mt-4 text-muted-foreground">Loading...</p>
     </div>

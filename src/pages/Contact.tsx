@@ -111,7 +111,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-2">{t('contact.visitUs')}</h3>
                     <p className="text-muted-foreground">
-                      Marrakech Medina<br />
+                      18 Yacoub El Mansour Street<br />
+                      Next to Majorelle Gardens<br />
                       Marrakech, Morocco
                     </p>
                   </div>
@@ -239,14 +240,14 @@ const Contact = () => {
         {/* Map Section */}
         <div className="mt-16 rounded-2xl overflow-hidden shadow-elegant">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.431668947889!2d-7.989844884893855!3d31.630693181321847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech%2C%20Morocco!5e0!3m2!1sen!2sus!4v1647123456789!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3396.5286!2d-7.9967!3d31.6295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x1a2b3c4d5e6f7g8h!2s18%20Yacoub%20El%20Mansour%20Street%2C%20Marrakech%2C%20Morocco!5e0!3m2!1sen!2sus!4v1647123456789"
             width="100%"
             height="450"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Oussaid Tourism Location"
+            title="Oussaid Tourism Location - 18 Yacoub El Mansour Street, Majorelle Gardens"
           />
         </div>
       </div>
