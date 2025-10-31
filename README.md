@@ -95,7 +95,7 @@ The website supports English and French. Users can switch languages using the la
 ## Contact Information
 
 - **Phone**: +212 707-704981
-- **Email**: obenhadya@gmail.com
+- **Email**: office@oussaidtourisme.com
 - **Location**: Marrakech, Morocco
 - **Hours**: 24/7 Available
 
