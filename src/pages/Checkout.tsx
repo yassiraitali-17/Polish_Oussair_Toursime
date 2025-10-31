@@ -119,8 +119,8 @@ const Checkout = () => {
       // EMAIL CONFIGURATION: This is the FormSubmit endpoint that receives booking form submissions.
       // To change the email address, update the URL below to point to a different email address.
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
-      // This can be easily changed to any email address by replacing 'yassiraitali17@gmail.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/yassiraitali17@gmail.com';
+      // This can be easily changed to any email address by replacing 'office@oussaidtourisme.com' with your desired email.
+      const formSubmitUrl = 'https://formsubmit.co/office@oussaidtourisme.com';
 
       let bookingData: Record<string, any>;
 
