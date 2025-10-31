@@ -46,7 +46,7 @@ const Contact = () => {
       // To change the email address, update the URL below to point to a different email address.
       // Format: https://formsubmit.co/YOUR_EMAIL@example.com
       // This can be easily changed to any email address by replacing 'yassiraitali17@gmail.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/yassiraitali17@gmail.com';
+      const formSubmitUrl = 'https://formsubmit.co/office@oussaidtourisme.com';
 
       const submissionData = new FormData();
       Object.entries({
@@ -145,7 +145,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold mb-2">{t('contact.emailUs')}</h3>
                     <a href="mailto:obenhadya@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      obenhadya@gmail.com
+                      office@oussaidtourisme.com
                     </a>
                   </div>
                 </div>

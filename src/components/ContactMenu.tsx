@@ -26,7 +26,7 @@ const ContactMenu = () => {
       icon: Mail,
       label: 'Email',
       // EMAIL CONFIGURATION: Update this email address to change the contact email
-      action: () => window.location.href = 'mailto:obenhadya@gmail.com',
+      action: () => window.location.href = 'mailto:office@oussaidtourisme.com',
     },
   ];
 
