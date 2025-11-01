@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,6 +12,7 @@ import { useTranslate } from '@/hooks/useTranslate';
 const Contact = () => {
   const { t } = useTranslate();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -64,11 +66,7 @@ const Contact = () => {
 
       // FormSubmit returns 303 on success, but also accepts 2xx responses
       if (response.ok || response.status === 303 || response.status === 200) {
-        toast({
-          title: t('contact.messageSent'),
-          description: t('contact.messageSentDesc'),
-        });
-        setFormData({ name: '', email: '', phone: '', message: '' });
+        navigate('/thank-you', { state: { formData } });
       } else {
         console.error('FormSubmit response:', response.status, response.statusText);
         toast({
@@ -144,7 +142,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-2">{t('contact.emailUs')}</h3>
-                    <a href="mailto:obenhadya@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    <a href="mailto:office@oussaidtourisme.com" className="text-muted-foreground hover:text-primary transition-colors">
                       office@oussaidtourisme.com
                     </a>
                   </div>
