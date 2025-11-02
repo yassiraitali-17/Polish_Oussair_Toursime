@@ -49,7 +49,7 @@ const Contact = () => {
       const web3formsApiUrl = 'https://api.web3forms.com/submit';
 
       const submissionData = {
-        access_key: 'a50047ea-15c9-4aaa-9ed8-75b48cf6f4a8',
+        access_key: '33292424-484a-4bb7-b890-79d45ca59194',
         email_to: 'office@oussaidtourisme.com',
         subject: 'New Contact Form Submission - Oussaid Tourism',
         ...formData,
