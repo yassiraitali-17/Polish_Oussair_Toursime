@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,6 +12,7 @@ import { useTranslate } from '@/hooks/useTranslate';
 const Contact = () => {
   const { t } = useTranslate();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -42,35 +44,31 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // EMAIL CONFIGURATION: This is the FormSubmit endpoint that receives contact form submissions.
-      // To change the email address, update the URL below to point to a different email address.
-      // Format: https://formsubmit.co/YOUR_EMAIL@example.com
-      // This can be easily changed to any email address by replacing 'office@oussaidtourisme.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/office@oussaidtourisme.com';
+      // EMAIL CONFIGURATION: Web3Forms API integration
+      // All form submissions are sent to office@oussaidtourisme.com
+      const web3formsApiUrl = 'https://api.web3forms.com/submit';
 
-      const submissionData = new FormData();
-      Object.entries({
+      const submissionData = {
+        access_key: '33292424-484a-4bb7-b890-79d45ca59194',
+        email_to: 'office@oussaidtourisme.com',
+        subject: 'New Contact Form Submission - Oussaid Tourism',
         ...formData,
-        _subject: 'New Contact Form Submission - Oussaid Tourism',
-        _template: 'table',
-      }).forEach(([key, value]) => {
-        submissionData.append(key, String(value));
-      });
+      };
 
-      const response = await fetch(formSubmitUrl, {
+      const response = await fetch(web3formsApiUrl, {
         method: 'POST',
-        body: submissionData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
       });
 
-      // FormSubmit returns 303 on success, but also accepts 2xx responses
-      if (response.ok || response.status === 303 || response.status === 200) {
-        toast({
-          title: t('contact.messageSent'),
-          description: t('contact.messageSentDesc'),
-        });
-        setFormData({ name: '', email: '', phone: '', message: '' });
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        navigate('/thank-you', { state: { formData } });
       } else {
-        console.error('FormSubmit response:', response.status, response.statusText);
+        console.error('Web3Forms response:', result);
         toast({
           title: t('contact.submissionError'),
           description: t('contact.submissionErrorDesc'),

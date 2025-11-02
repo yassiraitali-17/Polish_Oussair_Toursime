@@ -116,11 +116,9 @@ const Checkout = () => {
     setIsSubmitting(true);
 
     try {
-      // EMAIL CONFIGURATION: This is the FormSubmit endpoint that receives booking form submissions.
-      // To change the email address, update the URL below to point to a different email address.
-      // Format: https://formsubmit.co/YOUR_EMAIL@example.com
-      // This can be easily changed to any email address by replacing 'office@oussaidtourisme.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/office@oussaidtourisme.com';
+      // EMAIL CONFIGURATION: Web3Forms API integration
+      // All booking submissions are sent to office@oussaidtourisme.com
+      const web3formsApiUrl = 'https://api.web3forms.com/submit';
 
       let bookingData: Record<string, any>;
 
@@ -181,21 +179,29 @@ const Checkout = () => {
         };
       }
 
-      const submitFormData = new FormData();
-      Object.entries(bookingData).forEach(([key, value]) => {
-        submitFormData.append(key, String(value));
-      });
+      const submissionData = {
+        access_key: '33292424-484a-4bb7-b890-79d45ca59194',
+        email_to: 'office@oussaidtourisme.com',
+        subject: bookingData._subject || 'New Booking - Oussaid Tourism',
+        ...Object.fromEntries(
+          Object.entries(bookingData).filter(([key]) => !key.startsWith('_'))
+        ),
+      };
 
-      const response = await fetch(formSubmitUrl, {
+      const response = await fetch(web3formsApiUrl, {
         method: 'POST',
-        body: submitFormData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
       });
 
-      // FormSubmit returns 303 on success, but also accepts 2xx responses
-      if (response.ok || response.status === 303 || response.status === 200) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         navigate('/thank-you', { state: { bookingData } });
       } else {
-        console.error('FormSubmit response:', response.status, response.statusText);
+        console.error('Web3Forms response:', result);
         toast({
           title: 'Submission Error',
           description: 'There was a problem submitting your booking. Please try again.',
