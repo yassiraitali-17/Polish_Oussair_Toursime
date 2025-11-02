@@ -490,15 +490,15 @@ export const services: Service[] = [
     title: 'Hot Air Balloon',
     shortDescription: 'Peaceful sunrise flight with breakfast and certificate',
     description: 'Peaceful sunrise flight with 360° view, followed by breakfast and certificate.',
-    price: 'From €80 / 800Dhs',
+    price: 'From €120 / 1200Dhs',
     duration: '4 hours | Departure at 9:00',
     image: images.hot_air_balloon_main,
     location: 'Marrakech Region',
     inclusions: ['Sunrise balloon flight', 'Breakfast', 'Flight certificate', 'Round-trip transport', 'Photos stop'],
     gallery: ['https://cdn.builder.io/o/assets%2Ff5ae612caa3a43a889240417f0349a86%2Faa7d57cf66844e86870f59a73e628652?alt=media&token=53eb403c-26e2-4242-8d2b-0ece20d97402&apiKey=f5ae612caa3a43a889240417f0349a86'],
     priceVariants: [
-      { label: 'Adult', price: '€150 / 1500Dhs', priceNumeric: 150 },
-      { label: 'Child (-7 years)', price: '€80 / 800Dhs', priceNumeric: 80 }
+      { label: 'Adult', price: '€120 / 1200Dhs', priceNumeric: 120 },
+      { label: 'Child (-7 years)', price: '€70 / 700Dhs', priceNumeric: 70 }
     ],
   },
   {
@@ -624,7 +624,7 @@ export const services: Service[] = [
     title: 'Ourika Valley – 1 Day',
     shortDescription: 'Discover the stunning Ourika Valley with its waterfalls and traditional Berber villages',
     description: 'Experience the beauty of the Ourika Valley, nestled in the foothills of the Atlas Mountains. Visit traditional Berber villages, explore local markets, and enjoy breathtaking waterfall views.',
-    price: '€20 / 200Dhs',
+    price: '€15 / 150Dhs',
     duration: 'Full day | Departure at 8:30 or 9:00',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fbd3d65f6ab2d4d5cb8b3184523df279d?format=webp&width=800',
     location: 'Ourika Valley',
@@ -634,8 +634,8 @@ export const services: Service[] = [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Ff9e05f76ac654b38b5d24759f0fa5e46?format=webp&width=800',
     ],
     priceVariants: [
-      { label: 'Adult', price: '€20 / 200Dhs', priceNumeric: 20 },
-      { label: 'Child (-7 years)', price: '€10 / 100Dhs', priceNumeric: 10 }
+      { label: 'Adult', price: '€15 / 150Dhs', priceNumeric: 15 },
+      { label: 'Child (-7 years)', price: '€8 / 80Dhs', priceNumeric: 8 }
     ],
   },
   {
@@ -644,7 +644,7 @@ export const services: Service[] = [
     title: 'Ouzoud Waterfalls – 1 Day',
     shortDescription: 'Visit Morocco\'s most spectacular waterfalls and see wild monkeys in their natural habitat',
     description: 'Journey to the magnificent Ouzoud Waterfalls, one of North Africa\'s most stunning natural wonders. Enjoy a scenic hike, spot Barbary monkeys, and take a refreshing boat ride at the base of the falls.',
-    price: '€30 / 300Dhs',
+    price: '€25 / 250Dhs',
     duration: 'Full day | Departure at 8:30',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F253dc0b0e0874aad9b1f7e4818963077?format=webp&width=800',
     location: 'Ouzoud',
@@ -654,8 +654,8 @@ export const services: Service[] = [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F4b7d76de6d784244b8cc7ad1160e1a1f?format=webp&width=800',
     ],
     priceVariants: [
-      { label: 'Adult', price: '€30 / 300Dhs', priceNumeric: 30 },
-      { label: 'Child (-7 years)', price: '€20 / 200Dhs', priceNumeric: 20 }
+      { label: 'Adult', price: '€25 / 250Dhs', priceNumeric: 25 },
+      { label: 'Child (-7 years)', price: '€15 / 150Dhs', priceNumeric: 15 }
     ],
   },
   {
@@ -664,7 +664,7 @@ export const services: Service[] = [
     title: 'Essaouira – 1 Day',
     shortDescription: 'Explore the charming coastal city of Essaouira with its historic medina and beautiful beaches',
     description: 'Discover the picturesque port city of Essaouira, a UNESCO World Heritage site. Wander through the historic medina, visit the bustling harbor, and enjoy fresh seafood by the Atlantic Ocean.',
-    price: '€25 / 250Dhs',
+    price: '€20 / 200Dhs',
     duration: 'Full day | Departure at 8:30',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F2e1d2aab1883484ca89bef7324cd8724?format=webp&width=800',
     location: 'Essaouira',
@@ -674,8 +674,8 @@ export const services: Service[] = [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F11799ed8575f4d92bc28d21287bce0c9?format=webp&width=800',
     ],
     priceVariants: [
-      { label: 'Adult', price: '€25 / 250Dhs', priceNumeric: 25 },
-      { label: 'Child (-7 years)', price: '€15 / 150Dhs', priceNumeric: 15 }
+      { label: 'Adult', price: '€20 / 200Dhs', priceNumeric: 20 },
+      { label: 'Child (-7 years)', price: '€12 / 120Dhs', priceNumeric: 12 }
     ],
   },
   {
@@ -704,7 +704,7 @@ export const services: Service[] = [
     title: 'Merzouga Desert – 3 Days / 2 Nights',
     shortDescription: 'Experience the magical Sahara Desert with camel rides and overnight stay in traditional Berber camp',
     description: 'Embark on an unforgettable journey to the spectacular Erg Chebbi dunes of Merzouga. Experience authentic Sahara desert life with camel trekking, stunning sunset and sunrise views, traditional Berber hospitality, and a night under the stars in a desert camp. This 3-day adventure includes visits to the Atlas Mountains, Todra Gorges, and authentic Berber villages along the way.',
-    price: 'From €150 / 1500Dhs',
+    price: 'From €100 / 1000Dhs',
     duration: '3 days / 2 nights | Departure at 7:00',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Feef5e3634cd8406fbe94cdec81d57156?format=webp&width=800',
     location: 'Merzouga - Sahara Desert',
@@ -714,8 +714,8 @@ export const services: Service[] = [
       'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2Fa6e256472ba643f292ff7f54a7c18688?format=webp&width=800',
     ],
     priceVariants: [
-      { label: 'Adult', price: '€150 / 1500Dhs', priceNumeric: 150 },
-      { label: 'Child (under 10 years)', price: '€100 / 1000Dhs', priceNumeric: 100 }
+      { label: 'Adult', price: '€100 / 1000Dhs', priceNumeric: 100 },
+      { label: 'Child (under 10 years)', price: '€70 / 700Dhs', priceNumeric: 70 }
     ],
   },
   {
@@ -724,7 +724,7 @@ export const services: Service[] = [
     title: 'Zagora Desert – 2 Days / 1 Night',
     shortDescription: 'A two-day desert adventure from Marrakech to Zagora. Cross the High Atlas Mountains, visit Aït Ben Haddou and Draa Valley, then ride a camel into the dunes for a night under the stars',
     description: 'A two-day desert adventure from Marrakech to Zagora. Cross the High Atlas Mountains, visit Aït Ben Haddou and Draa Valley, then ride a camel into the dunes for a night under the stars. Includes dinner and breakfast at the camp.',
-    price: '€100 / 1000Dhs',
+    price: '€80 / 800Dhs',
     duration: '2 days / 1 night | Departure at 7:00',
     image: 'https://cdn.builder.io/api/v1/image/assets%2Ff0ef3956f1594dd0bfe19365a1ee323f%2F2fda08ffc38342e885108cf40225225f?format=webp&width=800',
     location: 'Zagora - Draa Valley',
