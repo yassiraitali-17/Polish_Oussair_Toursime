@@ -44,31 +44,31 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // EMAIL CONFIGURATION: This is the FormSubmit endpoint that receives contact form submissions.
-      // To change the email address, update the URL below to point to a different email address.
-      // Format: https://formsubmit.co/YOUR_EMAIL@example.com
-      // This can be easily changed to any email address by replacing 'yassiraitali17@gmail.com' with your desired email.
-      const formSubmitUrl = 'https://formsubmit.co/office@oussaidtourisme.com';
+      // EMAIL CONFIGURATION: Web3Forms API integration
+      // All form submissions are sent to office@oussaidtourisme.com
+      const web3formsApiUrl = 'https://api.web3forms.com/submit';
 
-      const submissionData = new FormData();
-      Object.entries({
+      const submissionData = {
+        access_key: 'a50047ea-15c9-4aaa-9ed8-75b48cf6f4a8',
+        email_to: 'office@oussaidtourisme.com',
+        subject: 'New Contact Form Submission - Oussaid Tourism',
         ...formData,
-        _subject: 'New Contact Form Submission - Oussaid Tourism',
-        _template: 'table',
-      }).forEach(([key, value]) => {
-        submissionData.append(key, String(value));
-      });
+      };
 
-      const response = await fetch(formSubmitUrl, {
+      const response = await fetch(web3formsApiUrl, {
         method: 'POST',
-        body: submissionData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
       });
 
-      // FormSubmit returns 303 on success, but also accepts 2xx responses
-      if (response.ok || response.status === 303 || response.status === 200) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         navigate('/thank-you', { state: { formData } });
       } else {
-        console.error('FormSubmit response:', response.status, response.statusText);
+        console.error('Web3Forms response:', result);
         toast({
           title: t('contact.submissionError'),
           description: t('contact.submissionErrorDesc'),
