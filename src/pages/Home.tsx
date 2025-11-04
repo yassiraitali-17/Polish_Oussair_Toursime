@@ -24,9 +24,9 @@ const Home = () => {
   const transportation = getServicesByCategory('transportation');
 
   const featuredActivities = [
+    allServices.find(s => s.id === 'argan-cooperative'),
     allServices.find(s => s.id === 'agafay-pack-complet'),
     allServices.find(s => s.id === 'agafay-quad'),
-    allServices.find(s => s.id === 'agafay-camel'),
   ].filter(Boolean);
 
   const featuredTours = [
