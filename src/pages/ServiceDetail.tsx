@@ -27,6 +27,7 @@ const ServiceDetail = () => {
   const currentInclusions = selectedVariant
     ? (language === 'fr' ? selectedVariant.inclusionsFr || selectedVariant.inclusions : selectedVariant.inclusions)
     : (language === 'fr' ? service?.inclusionsFr || service?.inclusions : service?.inclusions);
+  const currentExclusions = language === 'fr' ? service?.exclusionsFr || service?.exclusions : service?.exclusions;
 
   const otherVariants = service?.variants?.filter(v => v.id !== selectedVariant?.id) || [];
 
