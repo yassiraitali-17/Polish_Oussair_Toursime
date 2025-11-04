@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Clock, MapPin, Check, ArrowRight, ArrowLeft, Users, ChevronDown } from 'lucide-react';
 import { getServiceById } from '@/data/services';
+import { useLanguage } from '@/contexts/LanguageContext';
 import MapItinerary from '@/components/MapItinerary';
 import ImageGallery from '@/components/ImageGallery';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,7 @@ import { Label } from '@/components/ui/label';
 const ServiceDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { language } = useLanguage();
   const service = getServiceById(id || '');
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [selectedVariant, setSelectedVariant] = useState(service?.variants?.[0]);
@@ -18,9 +20,14 @@ const ServiceDetail = () => {
   const [personsCount, setPersonsCount] = useState<number>(1);
 
   const currentPrice = selectedVariant?.price || service?.price;
-  const currentDescription = selectedVariant?.description || service?.description;
+  const currentDescription = selectedVariant
+    ? (language === 'fr' ? selectedVariant.descriptionFr || selectedVariant.description : selectedVariant.description)
+    : (language === 'fr' ? service?.descriptionFr || service?.description : service?.description);
   const currentDuration = selectedVariant?.duration || service?.duration;
-  const currentInclusions = selectedVariant?.inclusions || service?.inclusions;
+  const currentInclusions = selectedVariant
+    ? (language === 'fr' ? selectedVariant.inclusionsFr || selectedVariant.inclusions : selectedVariant.inclusions)
+    : (language === 'fr' ? service?.inclusionsFr || service?.inclusions : service?.inclusions);
+  const currentExclusions = language === 'fr' ? service?.exclusionsFr || service?.exclusions : service?.exclusions;
 
   const otherVariants = service?.variants?.filter(v => v.id !== selectedVariant?.id) || [];
 
@@ -81,7 +88,9 @@ const ServiceDetail = () => {
         {/* Title */}
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {selectedVariant?.label || service.title}
+            {selectedVariant
+              ? (language === 'fr' ? selectedVariant.labelFr || selectedVariant.label : selectedVariant.label)
+              : (language === 'fr' ? service.titleFr || service.title : service.title)}
           </h1>
           <div className="flex items-center gap-6 text-muted-foreground">
             <div className="flex items-center gap-2">
@@ -314,11 +323,11 @@ const ServiceDetail = () => {
             </ul>
           </div>
 
-          {service.exclusions && service.exclusions.length > 0 && (
+          {currentExclusions && currentExclusions.length > 0 && (
             <div>
               <h2 className="text-3xl font-bold mb-4">What's NOT Included</h2>
               <ul className="space-y-3">
-                {service.exclusions.map((exclusion, index) => (
+                {currentExclusions.map((exclusion, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 text-muted-foreground">✕</span>
                     <span className="text-lg text-muted-foreground">{exclusion}</span>
