@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Clock, MapPin, Check, ArrowRight, ArrowLeft, Users, ChevronDown } from 'lucide-react';
 import { getServiceById } from '@/data/services';
+import { useLanguage } from '@/contexts/LanguageContext';
 import MapItinerary from '@/components/MapItinerary';
 import ImageGallery from '@/components/ImageGallery';
 import { Input } from '@/components/ui/input';
@@ -11,6 +12,7 @@ import { Label } from '@/components/ui/label';
 const ServiceDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { language } = useLanguage();
   const service = getServiceById(id || '');
   const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [selectedVariant, setSelectedVariant] = useState(service?.variants?.[0]);
@@ -18,9 +20,13 @@ const ServiceDetail = () => {
   const [personsCount, setPersonsCount] = useState<number>(1);
 
   const currentPrice = selectedVariant?.price || service?.price;
-  const currentDescription = selectedVariant?.description || service?.description;
+  const currentDescription = selectedVariant
+    ? (language === 'fr' ? selectedVariant.descriptionFr || selectedVariant.description : selectedVariant.description)
+    : (language === 'fr' ? service?.descriptionFr || service?.description : service?.description);
   const currentDuration = selectedVariant?.duration || service?.duration;
-  const currentInclusions = selectedVariant?.inclusions || service?.inclusions;
+  const currentInclusions = selectedVariant
+    ? (language === 'fr' ? selectedVariant.inclusionsFr || selectedVariant.inclusions : selectedVariant.inclusions)
+    : (language === 'fr' ? service?.inclusionsFr || service?.inclusions : service?.inclusions);
 
   const otherVariants = service?.variants?.filter(v => v.id !== selectedVariant?.id) || [];
 
