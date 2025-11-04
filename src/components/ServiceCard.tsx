@@ -3,6 +3,7 @@ import { Clock, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 import type { Service } from '@/data/services';
 
 interface ServiceCardProps {
@@ -10,12 +11,13 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ service }: ServiceCardProps) => {
+  const { language } = useLanguage();
   const [selectedVariant, setSelectedVariant] = useState(service.variants?.[0]);
   const [showVariants, setShowVariants] = useState(false);
 
   const currentPrice = selectedVariant?.price || service.price;
   const currentDuration = selectedVariant?.duration || service.duration;
-  const currentTitle = selectedVariant?.label || service.title;
+  const currentTitle = selectedVariant?.(language === 'fr' ? 'labelFr' : 'label') || selectedVariant?.label || (language === 'fr' ? service.titleFr : service.title) || service.title;
 
   const hasVariants = service.variants && service.variants.length > 0;
 
