@@ -37,6 +37,10 @@ export interface Service {
 
 // Image asset mapping
 const images = {
+  argan_cooperative_main: 'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2Fc1f4e3ecaf9d4fb0bbb2595452d68616?format=webp&width=800',
+  argan_cooperative_1: 'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2F403c9ef409fe4f1eb9de20807a2beacd?format=webp&width=800',
+  argan_cooperative_2: 'https://cdn.builder.io/api/v1/image/assets%2F9a93815a2ca64217a8991909b6f8bf7f%2F4dbc78d5e1aa4ada814f4638c6eaa282?format=webp&width=800',
+
   agafay_pack_main: 'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2Fb5f5441734ef416baa85d8e3ec7bb8f2?format=webp&width=800',
   agafay_pack_1: 'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2F54af5aa762624137b093dbe7edde208d?format=webp&width=800',
   agafay_pack_2: 'https://cdn.builder.io/api/v1/image/assets%2Ff5ae612caa3a43a889240417f0349a86%2Fec6b047bb488465faf61e8913170d3a5?format=webp&width=800',
@@ -93,6 +97,22 @@ const images = {
 };
 
 export const services: Service[] = [
+  // Other Activities - Free Offers
+  {
+    id: 'argan-cooperative',
+    category: 'activity',
+    subcategory: 'other',
+    title: 'Argan Cooperative & Handicraft Complex Visit',
+    shortDescription: 'Discover authentic Moroccan craftsmanship and natural cosmetics - Free Offer',
+    description: 'Discover the beauty of Moroccan craftsmanship and natural cosmetics!\nThis experience includes a visit to an authentic argan oil cooperative and a traditional handicraft complex, where you can explore the making of local cosmetic products and handmade art pieces.\nFree transport included — this visit is completely free for all Oussaid Tourisme guests!',
+    price: 'Free Offer (€0)',
+    duration: '2-3 hours',
+    image: images.argan_cooperative_main,
+    location: 'Marrakech Region',
+    inclusions: ['Visit to argan oil cooperative', 'Traditional handicraft complex tour', 'Cosmetic products demonstration', 'Handmade art exhibition', 'Free round-trip transport', 'Photos stop'],
+    gallery: [images.argan_cooperative_1, images.argan_cooperative_2],
+  },
+
   // Agafay Activities
   {
     id: 'agafay-pack-complet',
