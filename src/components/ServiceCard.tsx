@@ -37,7 +37,11 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
             loading="lazy"
             decoding="async"
           />
-          <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+          <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-semibold shadow-lg ${
+            currentPrice.toLowerCase().includes('free')
+              ? 'bg-green-500 text-white'
+              : 'bg-primary text-primary-foreground'
+          }`}>
             {currentPrice}
           </div>
         </div>
