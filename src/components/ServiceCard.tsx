@@ -98,7 +98,9 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
           )}
 
           <p className="text-muted-foreground mb-4 line-clamp-2">
-            {selectedVariant?.description || service.shortDescription}
+            {selectedVariant
+              ? (language === 'fr' ? selectedVariant.descriptionFr || selectedVariant.description : selectedVariant.description)
+              : (language === 'fr' ? service.shortDescriptionFr || service.shortDescription : service.shortDescription)}
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-1">
