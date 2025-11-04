@@ -17,7 +17,9 @@ const ServiceCard = ({ service }: ServiceCardProps) => {
 
   const currentPrice = selectedVariant?.price || service.price;
   const currentDuration = selectedVariant?.duration || service.duration;
-  const currentTitle = selectedVariant?.(language === 'fr' ? 'labelFr' : 'label') || selectedVariant?.label || (language === 'fr' ? service.titleFr : service.title) || service.title;
+  const currentTitle = selectedVariant
+    ? (language === 'fr' ? selectedVariant.labelFr || selectedVariant.label : selectedVariant.label)
+    : (language === 'fr' ? service.titleFr || service.title : service.title);
 
   const hasVariants = service.variants && service.variants.length > 0;
 
