@@ -323,11 +323,11 @@ const ServiceDetail = () => {
             </ul>
           </div>
 
-          {service.exclusions && service.exclusions.length > 0 && (
+          {currentExclusions && currentExclusions.length > 0 && (
             <div>
               <h2 className="text-3xl font-bold mb-4">What's NOT Included</h2>
               <ul className="space-y-3">
-                {service.exclusions.map((exclusion, index) => (
+                {currentExclusions.map((exclusion, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-0.5 text-muted-foreground">✕</span>
                     <span className="text-lg text-muted-foreground">{exclusion}</span>
