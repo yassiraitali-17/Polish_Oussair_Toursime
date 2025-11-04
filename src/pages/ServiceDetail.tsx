@@ -87,7 +87,9 @@ const ServiceDetail = () => {
         {/* Title */}
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            {selectedVariant?.label || service.title}
+            {selectedVariant
+              ? (language === 'fr' ? selectedVariant.labelFr || selectedVariant.label : selectedVariant.label)
+              : (language === 'fr' ? service.titleFr || service.title : service.title)}
           </h1>
           <div className="flex items-center gap-6 text-muted-foreground">
             <div className="flex items-center gap-2">
