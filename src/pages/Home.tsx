@@ -170,7 +170,7 @@ const Home = () => {
               onClick={() => {
                 // TODO: Replace with your Google Business profile URL
                 // Example: https://www.google.com/maps/place/Oussaid+Tourism/@YOUR_COORDINATES/YOUR_PLACE_ID
-                window.open('https://google.com', '_blank');
+                window.open('https://g.page/r/CQjnEAfl_ArsEAE/review', '_blank');
               }}
             >
               <GoogleIcon className="w-5 h-5" />
