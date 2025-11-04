@@ -5,14 +5,19 @@ export interface Service {
   category: 'activity' | 'tour' | 'transportation';
   subcategory?: 'agafay' | 'palmeraie' | string;
   title: string;
+  titleFr?: string;
   description: string;
+  descriptionFr?: string;
   shortDescription: string;
+  shortDescriptionFr?: string;
   price: string;
   duration: string;
   image: string;
   location: string;
   inclusions: string[];
+  inclusionsFr?: string[];
   exclusions?: string[];
+  exclusionsFr?: string[];
   itinerary?: {
     day: string;
     description: string;
@@ -26,10 +31,13 @@ export interface Service {
   variants?: {
     id: string;
     label: string;
+    labelFr?: string;
     price: string;
     description?: string;
+    descriptionFr?: string;
     duration?: string;
     inclusions?: string[];
+    inclusionsFr?: string[];
   }[];
   isRental?: boolean;
   hideFromList?: boolean;
